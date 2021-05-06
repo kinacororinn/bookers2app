@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def followings
     @user =User.find(params[:id])
     @users =@user.followings.page(params[:page]).per(5)
+    @userss =@User.followings
     render 'show_followings'
   end
   
