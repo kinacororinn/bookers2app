@@ -8,15 +8,14 @@ class UsersController < ApplicationController
   end
   def followings
     @user =User.find(params[:id])
-    @users =@user.followings.page(params[:page]).per(5)
-    @userss =@User.followings
-    render 'show_followings'
+    #@users =@user.followings.page(params[:page]).per(5)
+    @users =@user.followings
   end
-  
+
   def followers
     @user =User.find(params[:id])
-    @users =@user.followers.page(params[:page]).per(5)
-    render 'show_followers'
+    #@users =@user.followers.page(params[:page]).per(5)
+    @users =@user.followers
   end
 
   def index
@@ -39,7 +38,7 @@ class UsersController < ApplicationController
       render:edit
     end
   end
-  
+
 
   private
   def user_params
